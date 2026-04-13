@@ -1,3 +1,4 @@
+<<<<<<< HEAD:styles/index.css
 * {
     padding: 0;
     margin: 0;
@@ -85,3 +86,111 @@ footer {
 .logo_ricale {
     width: 150px;
 }
+=======
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --rojo_ricale:#cc0303;
+}
+
+body {
+    padding:.1em ;
+}
+
+h1 {
+    margin:0%;
+    padding: .2em;
+    text-align: center;
+    background-color:var(--rojo_ricale);
+    color: white;
+}
+
+header {
+    padding:.5em;
+    background-color: whitesmoke;
+    display:flex ;
+    /*justify-content: space-between;*/
+}
+
+.container {
+ max-width: 1190px;
+ padding: 0 15px; /* Aumentamos los márgenes laterales */
+ margin: 0 auto; /* Centramos el contenedor horizontalmente */
+ align-self: center;
+}
+
+ul {
+    font-size: 1.3em;
+    display:flex;
+    list-style: none;    
+}
+
+li {
+    padding-inline: 1.5em;
+    cursor: pointer;
+    
+}
+
+li:hover {
+    color:blue
+}
+
+ button {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2px 30px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+ }
+button:hover {
+     background-color:forestgreen;
+     color: white;
+
+}
+
+.logo_academy {
+    width: 200px;
+    cursor: pointer;
+}
+
+.home {
+    display: flex;
+}
+
+.menu_izquierdo {
+    width: 20vw;
+    height:60vh;
+    background-color:var(--rojo_ricale);
+    color: white;
+    font-size: 1.5em;
+    padding: 1%;
+    
+}
+
+.list_izquierdo {
+    display: block;
+    font-size: 1em;
+    padding-top: 10%;
+    
+}
+
+.panel_derecho {
+    width: 80vw;
+    background-color:whitesmoke;
+}
+footer {
+    padding:.5em;
+    background-color: var(--rojo_ricale);
+    display:flex ;
+    font-size: 1.1em;
+}
+
+.logo_ricale {
+    width: 100px;
+}
+>>>>>>> e2540950735ba8211b7b45bcf1164c5997d04d07:styles/style.css
