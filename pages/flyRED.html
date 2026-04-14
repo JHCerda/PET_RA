@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cotizador FlyRED - Ricale Academy - v.Mar26 Pro</title>
+    <link rel="shortcut icon" href="../images/favicon.svg" type="image/x-icon">
+    <title>Cotizador FlyRED </title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <style>
         * { padding: 0; margin: 0; box-sizing: border-box; }
         body { font-family: 'Calibri', sans-serif; background-color: #BB1010; display: flex; justify-content: center; padding: 20px; color: #333; }
-        .field_container { background-color: #f0f0f0; padding: 10px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); max-width: 950px; width: 100%; }
-        h2 { text-align: center; color: #BB1010; margin-top: 0; border-bottom: 2px solid #BB1010; padding-bottom: 10px; }
+        .body_container { background-color: #f0f0f0; padding: 10px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); min-width: 900px ;max-width: 950px; width: 100%; }
+        h2 { text-align: center; color: #BB1010; margin: 0 0 5px 0; border-bottom: 2px solid #BB1010; padding-bottom: 5px; }
         .grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         fieldset { border: 1px solid #ccc; border-radius: 5px; margin-bottom: 5px; padding: 10px; background: white; }
         legend { font-weight: bold; color: #BB1010; padding: 0 5px; }
@@ -36,9 +37,9 @@
 </head>
 <body>
     
-    <div class="field_container">
-        <span><a href="../index copy.html">Volver</a></span>
-        <h2>Cotizador FlyRED - Ricale Academy - v.Mar26 Pro </h2>
+    <div class="body_container">
+        <span><a href="../index.html">Volver</a></span>
+        <h2>Cotizador Ricale Academy - FlyRED - v. Pro Mar26</h2>
 
         <div class="grid-layout">
             <div class="col">
@@ -80,13 +81,16 @@
                             <option value="Pesos">Pesos</option>
                         </select>
                     </div>
-                    <div class="form-group"><label>Tarifa SIN Impuestos:</label><input type="number" id="flyred_fare" value="0" min="0"></div>
-                    <div class="form-group"><label>Impuestos:</label><input type="number" id="flyred_tax" value="0" min="0"></div>
-                    <div class="form-group"><label>Fee Ricale:</label><input type="number" id="flyred_issuefee" value="0" min="0"></div>
-                    <div class="form-group"><label>Comisión Promotor (Importe):</label><input type="number" id="flyred_comi" value="0" min="0"></div>
-                    <div class="form-group"><label>Over Promotor (Importe):</label><input type="number" id="flyred_over" value="0" min="0"></div>
-                    <div class="form-group"><label>Fee Adicional Promotor:</label><input type="number" id="srv_fee" value="0" min="0"></div>
+                    <div class="form-group"><label>Tarifa SIN Impuestos:</label><input type="number" id="flyred_fare" value="0.00" min="0"></div>
+                    <div class="form-group"><label>Impuestos:</label><input type="number" id="flyred_tax" value="0.00" min="0"></div>
+                    <div class="form-group"><label>Fee Ricale:</label><input type="number" id="flyred_issuefee" value="0.00" min="0"></div>
+                    <div class="form-group"><label>Comisión Promotor (Importe):</label><input type="number" id="flyred_comi" value="0.00" min="0"></div>
+                    <div class="form-group"><label>Over Promotor (Importe):</label><input type="number" id="flyred_over" value="0.00" min="0"></div>
                 </fieldset>
+                <fieldset>
+                    <legend>Adicional Promotor</legend>
+                    <div class="form-group"><label>Fee Promotor:</label><input type="number" id="srv_fee" value="0.00" min="0"></div>
+                </fieldset>    
             </div>
 
             <div class="col">
@@ -94,7 +98,7 @@
                     <legend>Datos del Cliente</legend>
                     <div class="form-group"><label>ID Cliente:</label><input type="number" id="client_info" value="0" min="0"></div>
                     <div class="form-group"><label>CUIT/CUIL:</label><input type="number" id="client_cuit" value="0" min="0"></div>
-                    <div class="form-group"><label>PNR o Detalle Itinerario:</label><input type="text" id="client_pnr" value="_"></div>
+                    <div class="form-group"><label>Detalle Reserva - Localizador:</label><input type="text" id="client_pnr" value="_"></div>
                 </fieldset>
 
                 <div class="buttons">
@@ -104,8 +108,9 @@
                     <button class="btn-mail" onclick="enviarEmail()">Enviar Cotización por Mail</button>
                 </div>
 
-                <div style="margin-top: 20px;">
+                <div style="margin-top: 5px;">
                     <fieldset>
+                        <legend>Calculos de Tarifa</legend>
                         <div class="form-group"><label>Costo Total Producto (FlyRED):</label><span id="out_cost" class="readonly-box">0.00</span></div>
                         <div class="form-group"><label>Utilidad Total Producto (FlyRED):</label><span id="out_revn" class="readonly-box">0.00</span></div>
                     </fieldset>
