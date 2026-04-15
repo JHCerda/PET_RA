@@ -250,7 +250,7 @@
             
             html2pdf().from(element).set({
                 margin: 1,
-                filename: `Cotización ${datos/Coti.pnr || 'StayRED'}.pdf`,
+                filename: `Cotización ${datosCoti.pnr || 'StayRED'}.pdf`,
                 html2canvas: { scale: 2 },
                 jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
             }).save().then(() => { element.style.display = 'none'; });
