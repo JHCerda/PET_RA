@@ -1,0 +1,118 @@
+/* Estilos generales para ambos cotizadores */
+* { padding: 0; margin: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Calibri', sans-serif; 
+    background-color: #BB1010; 
+    display: flex; 
+    justify-content: center; 
+    padding: 20px; 
+    color: #333; 
+}
+
+.body_container { 
+    background-color: #f0f0f0; 
+    padding: 10px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+    max-width: 950px; 
+    width: 100%; 
+}
+
+h2 { 
+    text-align: center; 
+    color: #BB1010; 
+    margin: 0 0 5px 0; 
+    border-bottom: 2px solid #BB1010; 
+    padding-bottom: 5px; 
+}
+
+.grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+fieldset { 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    margin-bottom: 5px; 
+    padding: 10px; 
+    background: white; 
+}
+
+legend { font-weight: bold; color: #BB1010; padding: 0 5px; }
+
+.form-group { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 5px; 
+}
+
+input, select { 
+    padding: 6px; 
+    width: 160px; 
+    text-align: right; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+
+.readonly-box { 
+    background-color: #eee; 
+    border: 1px solid #bbb; 
+    padding: 6px; 
+    width: 160px; 
+    text-align: right; 
+    font-weight: bold; 
+    display: inline-block; 
+    border-radius: 4px; 
+}
+
+.readonly-box_pTipe { 
+    background-color: #eee; 
+    border: 1px solid #bbb; 
+    padding: 6px; 
+    width: 140px; 
+    text-align: left; 
+    font-weight: bold; 
+    display: inline-block; 
+    border-radius: 4px; 
+}
+
+/* Ocultar flechas de números */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type="number"] { appearance: none; -moz-appearance: textfield; }
+
+.buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+
+button { 
+    padding: 12px; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    transition: 0.3s; 
+}
+
+button:hover { opacity: 0.8; }
+
+.btn-calc { background-color: #1E8449; grid-column: span 2; font-size: 1.1em; }
+.btn-clear { background-color: #333; }
+.btn-pdf { background-color: #FF5733; }
+.btn-mail { background-color: #007BFF; grid-column: span 2; }
+
+.total-box { 
+    grid-column: span 2; 
+    background-color: #fff; 
+    padding: 15px; 
+    border: 2px solid #BB1010; 
+    border-radius: 5px; 
+}
+
+/* Estilo PDF */
+#resumen-pdf { padding: 10px; color: black; background: white; display:none; margin: 0 auto; border-radius: 8px; }
+.pdf-header { border-bottom: 2px solid #BB1010; margin-bottom: 10px; }
+
+/* --- Media Query para Tablets --- */
+@media (max-width: 768px) {
+    .grid-layout { grid-template-columns: 1fr; }
+    .body_container { min-width: auto; }
+}
