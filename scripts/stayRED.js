@@ -76,7 +76,7 @@ function calcular() {
     // Actualizar Interfaz
     document.getElementById('out_pCurr').innerText = d.pCurr;
     document.getElementById('out_pTipe').innerText = d.pTipe;
-    document.getElementById('out_fare').innerText = formatCurrency(prod_fare, monedaSeleccionada);
+    document.getElementById('out_fare').innerText = formatCurrency(prod_fare, "ARS");
     document.getElementById('out_tax').innerText = formatCurrency(prod_tax,"ARS");
     document.getElementById('out_cost').innerText = formatCurrency(prod_cost,"ARS");
     document.getElementById('out_comi').innerText = formatCurrency(prod_comi,"ARS");
