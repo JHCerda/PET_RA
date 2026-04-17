@@ -1,6 +1,27 @@
 const trf_charge = 0.012, tc_charge = 0.072, rg_4815 = 0.05;
 let datosUltimaCoti = {};
 
+// Función para formatear moneda de las salidas
+function formatCurrency(valor, moneda = "ARS") {
+    return new Intl.NumberFormat('es-AR', {
+        style: 'currency',
+        currency: moneda,
+    }).format(valor);
+}
+
+//Dar formato de 2 decimales a todos los input[type="number"]
+const inputsDecimales = document.querySelectorAll('.formato-decimal');
+inputsDecimales.forEach(input => {
+    input.addEventListener('blur', function() {
+        let valor = parseFloat(this.value);
+        if (!isNaN(valor)) {
+            this.value = valor.toFixed(2);
+        }
+    });
+});
+
+
+
 function calcular() {
     const d = {
         dest: document.getElementById('srv_dest').value,
@@ -47,13 +68,13 @@ function calcular() {
     const gastos = sale_info - val_prod;
 
     // Actualizar UI
-    document.getElementById('out_cost').innerText = cost.toFixed(2);
-    document.getElementById('out_revn').innerText = revn.toFixed(2);
-    document.getElementById('out_val_prod').innerText = val_prod.toFixed(2);
+    document.getElementById('out_cost').innerText = formatCurrency(cost, "ARS");
+    document.getElementById('out_revn').innerText = formatCurrency(revn, "ARS");
+    document.getElementById('out_val_prod').innerText = formatCurrency(val_prod, "ARS");
     document.getElementById('out_pTipe').innerText = d.pTipe;
-    document.getElementById('out_gastos').innerText = gastos.toFixed(2);
-    document.getElementById('out_sale_info').innerText = sale_info.toFixed(2);
-    document.getElementById('out_rent_final').innerText = rent_final.toFixed(2);
+    document.getElementById('out_gastos').innerText = formatCurrency(gastos, "ARS");
+    document.getElementById('out_sale_info').innerText = formatCurrency(sale_info, "ARS");
+    document.getElementById('out_rent_final').innerText = formatCurrency(rent_final, "ARS");
     
     datosUltimaCoti = {...d, cost, revn, sale_info, rent_final, gastos, val_prod, uatp, posnet};
 

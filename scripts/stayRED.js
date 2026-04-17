@@ -1,18 +1,29 @@
 const rg_3819 = 0.30, iva = 0.21, mup_Ricale = 0.80, comi_Ricale = 0.20;
-const comi_Prom = 0.10, trf_charge = 0.012, rg_4815 = 0.05;
+const comi_Prom = 0.10, trf_charge = 0.012, tc_charge = 0.072, rg_4815 = 0.05;
+let datosCoti = {};
+
+//Dar formato de 2 decimales a todos los input[type="number"]
+const inputsDecimales = document.querySelectorAll('.formato-decimal');
+inputsDecimales.forEach(input => {
+    input.addEventListener('blur', function() {
+        let valor = parseFloat(this.value);
+        if (!isNaN(valor)) {
+            this.value = valor.toFixed(2);
+        }
+    });
+});
 
 // Detectamos la moneda seleccionada en el formulario
 //const monedaSeleccionada = document.getElementById('pay_curr').value === 'Pesos' ? 'ARS' : 'USD';
 
 // Función para formatear moneda
-function formatCurrency(valor, moneda) {
+function formatCurrency(valor, moneda ="ARS") {
     return new Intl.NumberFormat('es-AR', {
         style: 'currency',
         currency: moneda,
     }).format(valor);
 }
 
-let datosCoti = {};
 
 function calcular() {
     const d = {
@@ -67,7 +78,7 @@ function calcular() {
         let val_rg_4815 = (prod_fare * mup_Ricale) * rg_4815;
         sale_info = (val_prod + val_rg_4815) / (1 - trf_charge);
     } else {
-        sale_info = val_prod; 
+        sale_info = val_prod* (1+ tc_charge)
     }
     
     const gastos = sale_info - val_prod

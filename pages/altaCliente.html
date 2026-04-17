@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.svg" type="image/x-icon">
+    <title>Alta Cliente Final</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="../styles/altaCliente.css">
+</head>
+<body>
+
+<div class="body_container" id="form-to-print">
+    <div>    
+        <span><a href="../index.html">Volver</a></span>
+        <h2>Alta Cliente Final  Ricale Academy - v. Pro Mar26</h2>
+    </div>
+
+    <form id="clienteForm">
+        <div class="form-group">
+            <label>Nombre Completo del Cliente<span>*</span></label>
+            <div class="row">
+                <div class="col">
+                    <input type="text" id="nombres" required>
+                    <div class="sub-label">Nombres</div>
+                </div>
+                <div class="col">
+                    <input type="text" id="apellidos" required>
+                    <div class="sub-label">Apellidos</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>CUIT/CUIL del Cliente y Condición frente al IVA <span>*</span></label>
+            <div class="row">
+                <div class="col">
+                    <input type="text" id="cuit" required>
+                </div>
+                <div class="col">
+                    <select id="iva" required>
+                        <option value="">-Select-</option>
+                        <option value="CF">Consumidor Final</option>
+                        <option value="EX">Exento</option>
+                        <option value="MT">Monotributista</option>
+                        <option value="RI">Responsable Inscripto</option>
+                    </select>
+                </div>
+        </div>
+        <div class="form-group">
+            <label>Dirección del Cliente<span>*</span></label>
+            <div class="row">
+                <div class="col" style="flex: 2;">
+                    <input type="text" id="calle" required>
+                    <div class="sub-label">Calle</div>
+                </div>
+                <div class="col">
+                    <input type="text" id="numero" required>
+                    <div class="sub-label">Número</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="text" id="ciudad" required>
+                    <div class="sub-label">Ciudad</div>
+                </div>
+                <div class="col">
+                    <input type="text" id="localidad" required>
+                    <div class="sub-label">Localidad</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="text" id="cp" required>
+                    <div class="sub-label">Código Postal</div>
+                </div>
+                <div class="col">
+                    <select id="pais" required>
+                        <option value="">-Select-</option>
+                        <option value="ARG">Argentina</option>
+                        <option value="URU">Uruguay</option>
+                        <option value="CHI">Chile</option>
+                    </select>
+                    <div class="sub-label">País</div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label>Datos Vendedor <span>*</span></label>
+            <div class="row">
+                <div class="col">
+                    <input type="text" id="vendedor_nombre" required>
+                    <div class="sub-label">Nombre del Vendedor</div>
+                </div>
+                
+                <div class="col">
+                    <input type="text" id="vendedor_id" required>
+                    <div class="sub-label">Id del Vendedor</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Correo del vendedor <span>*</span></label>
+            <input type="email" id="vendedor_email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Adjuntar Imagen DNI  <span>*</span></label>
+            <input type="file" id="adjunto" accept=".png, .jpg, .jpeg" required>
+            <div class="sub-label">Formatos permitidos: PNG, JPG o JPEG</div>
+        </div>
+
+                <div class="form-group">
+            <label>Adjuntar Imagen Constancia de ARCA </label>
+            <input type="file" id="adjunto2" accept=".png, .jpg, .jpeg">
+            <div class="sub-label">Formatos permitidos: PNG, JPG o JPEG</div>
+        </div>
+            <div class="buttons">
+                <button type="button" class="btn btn-clear" id="btnLimpiar">Limpiar Formulario</button>
+                <button type="button" class="btn btn-mail" id="btnEnviar">Enviar por Mail</button>
+            </div>
+    </form>
+</div>
+
+<script src="../scripts/altaCliente.js"></script>
+</body>
+</html>

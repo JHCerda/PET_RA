@@ -1,5 +1,6 @@
 /* Estilos generales para ambos cotizadores */
 * { padding: 0; margin: 0; box-sizing: border-box; }
+
 body { 
     font-family: 'Calibri', sans-serif; 
     background-color: #BB1010; 
@@ -79,6 +80,7 @@ input, select {
 input[type="number"]::-webkit-inner-spin-button, 
 input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
 input[type="number"] { appearance: none; -moz-appearance: textfield; }
+input[type="text"] { text-transform: uppercase;}
 
 .buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
 
@@ -92,12 +94,12 @@ button {
     transition: 0.3s; 
 }
 
-button:hover { opacity: 0.8; }
-
 .btn-calc { background-color: #1E8449; grid-column: span 2; font-size: 1.1em; }
 .btn-clear { background-color: #333; }
 .btn-pdf { background-color: #FF5733; }
 .btn-mail { background-color: #007BFF; grid-column: span 2; }
+
+button:hover { opacity: 0.8; }
 
 .total-box { 
     grid-column: span 2; 

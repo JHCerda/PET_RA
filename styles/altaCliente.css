@@ -1,0 +1,134 @@
+:root {
+    --ricale-red: #be0000;
+    --ricale-teal: #28a78d;
+    --ricale-dark-teal: #1f8571;
+    --bg-gray: #f4f4f4;
+    --border-color: ;
+}
+
+* { padding: 0; margin: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Calibri', sans-serif;
+    background-color: #BB1010;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.body_container {
+    background-color: #f0f0f0;
+    width: 100%;
+    max-width: 950px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+h2 { 
+    text-align: center; 
+    color: #BB1010; 
+    margin: 0 0 5px 0; 
+    border-bottom: 2px solid #BB1010; 
+    padding-bottom: 5px; 
+}
+
+.header h1 {
+    color: #333;
+    font-size: 24px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.header p {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+label span {
+    color: #BB1010;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.col {
+    flex: 1;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Forzamos mayúsculas visuales en inputs de texto */
+input[type="text"] {
+    text-transform: uppercase;
+}
+
+.sub-label {
+    font-size: 10px;
+    color: #888;
+    margin-top: 2px;
+}
+
+
+.buttons {
+   /* display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; max-width: 400px; margin: auto;*/
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: background 0.3s;
+    font-size: 14px;
+    width: 200px;
+}
+
+.btn-clear { background-color: #333; }
+.btn-pdf { background-color:  #FF5733; }
+.btn-mail { background-color: #007BFF;grid-column: span 2; }
+
+button:hover { opacity: 0.8; }
+
+input[type="file"] {
+    background-color: var(--bg-gray);
+}
+
+@media (max-width: 600px) {
+    .row { flex-direction: column; gap: 10px; }
+    .btn { width: 100%; }
+}

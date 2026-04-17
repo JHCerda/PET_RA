@@ -55,12 +55,12 @@
                             <option value="Dólares">Dólares</option>
                         </select>
                     </div>
-                    <div class="form-group"><label>Tipo de Cambio StayRED:</label><input type="number" id="stayred_tdc" value="0.00"></div>
-                    <div class="form-group"><label>Precio Base StayRED:</label><input type="number" id="stayred_fare" value="0.00"></div>
+                    <div class="form-group"><label>Tipo de Cambio StayRED:</label><input type="number" id="stayred_tdc" class="formato-decimal" step="0.01" value="0.00"></div>
+                    <div class="form-group"><label>Precio Base StayRED:</label><input type="number" id="stayred_fare" class="formato-decimal" step="0.01" value="0.00"></div>
                 </fieldset>
                 <fieldset>
                     <legend>Adicional Promotor en Dólares</legend>
-                    <div class="form-group"><label>Fee Promotor</label><input type="number" id="srv_fee" value="0.00" min="0"></div>
+                    <div class="form-group"><label>Fee Promotor</label><input type="number" id="srv_fee" class="formato-decimal" step="0.01" value="0.00" min="0"></div>
                 </fieldset> 
                 
             </div>
@@ -76,8 +76,8 @@
                 <div class="buttons">
                     <button class="btn-calc" onclick="calcular()">Calcular</button>
                     <button class="btn-pdf" onclick="descargarPDF()">Descargar PDF</button>
-                    <button class="btn-clear" onclick="limpiar()">Limpiar</button>
-                    <button class="btn-mail" onclick="enviarEmail()">Enviar Cotización por Mail</button>
+                    <button class="btn-clear" onclick="limpiar()">Limpiar Formulario</button>
+                    <button class="btn-mail" onclick="enviarEmail()">Confirmar Reserva por Mail</button>
                 </div>
 
                 <div style="margin-top: 5px;">
